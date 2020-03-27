@@ -9,8 +9,8 @@ This project allows user to launch Softaware AG webMethods Microservices Runtime
 http://empowersdc.softwareag.com/dnld/wMInstaller/10.5/SoftwareAGInstaller20191216-LinuxX86.bin is one such example 
 4. Clone the webmethods-integrationserver-aws-samples repository.
 `git clone https://github.com/SoftwareAG/webmethods-integrationserver-aws-samples.git`
-5. Copy msrInstallerLinuxScript_10_5.txt from cloned repository (webmethods-integrationserver-aws-samples/msr/CloudFormation into s3 bucket
-6. Copy license file(licenseKey.xml) into the s3 bucket
+5. Copy msrInstallerLinuxScript_10_5.txt from cloned repository (webmethods-integrationserver-aws-samples/msr/CloudFormation) into s3 bucket created from step 2
+6. Copy license file(licenseKey.xml) into the created s3 bucket
 7. Select the region as US East( N.Virginia) as cloud formation is created from US East. If the template has to be used in different region, template has to be updated with the respective region and availability zone.
 8. Create the keypair for accessing ec2 instance https://docs.aws.amazon.com/ground-station/latest/ug/create-ec2-ssh-key-pair.html
 9. Some familiarity with AWS console UI
@@ -21,7 +21,7 @@ http://empowersdc.softwareag.com/dnld/wMInstaller/10.5/SoftwareAGInstaller201912
 2. Search and select "CloudFormation" service in AWS console home page 
 3. Click "Create stack" button in CloudFormation home page
 4. In Step 1 (Specify template) , Select "Upload a template file" 
-5. Click "Choose file" and browse  the cloud formation template [[name ]] from cloned repository and select Next
+5. Click "Choose file" and browse  the cloud formation template MsrSagStack.template.json from cloned repository(webmethods-integrationserver-aws-samples/msr/CloudFormation) and select Next
 6. In Step 2 ( Specify stack details), Specify Stack name
 7. In parameters section provide following values and click Next button
     * MSR Configuration
