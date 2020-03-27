@@ -8,7 +8,7 @@ This project allows user to launch MSR in AWS cloud using AWS Cloud Formation te
 3.  Download Software AG Installer(.bin) file for Linux from https://empower.softwareag.com/Products/DownloadProducts/sdc/default.aspx and copy into the s3 bucket.
 http://empowersdc.softwareag.com/dnld/wMInstaller/10.5/SoftwareAGInstaller20191216-LinuxX86.bin is one such example 
 4. Clone the webmethods-microservicesruntime-samples repository.
-git clone https://github.com/SoftwareAG/webmethods-microservicesruntime-samples.git
+`git clone https://github.com/SoftwareAG/webmethods-microservicesruntime-samples.git`
 5. Copy msrInstallerLinuxScript_10_5.txt from cloned repository into s3 bucket
 6. Copy the license file(licenseKey.xml) into the s3 bucket
 7. Select the region as US East( N.Virginia) as cloud formation is created from US East. If the template has to be used in different region, then CloudFormation template has to be updated with the respective region and availability zone.
