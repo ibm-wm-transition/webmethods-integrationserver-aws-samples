@@ -6,7 +6,7 @@ This project allows user to launch Softaware AG webMethods Microservices Runtime
 1. Create an AWS account https://portal.aws.amazon.com/billing/signup#/start or use existing account
 2. Create a S3 bucket https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html
 3.  Download Software AG Installer(.bin) file for Linux from https://empower.softwareag.com/Products/DownloadProducts/sdc/default.aspx and copy into the s3 bucket.
-http://empowersdc.softwareag.com/dnld/wMInstaller/10.5/SoftwareAGInstaller20191216-LinuxX86.bin is one such example 
+http://empowersdc.softwareag.com/dnld/wMInstaller/10.5/SoftwareAGInstaller20191216-LinuxX86.bin is one such example. Rename this file as installer.bin.
 4. Clone the webmethods-integrationserver-aws-samples repository.
 `git clone https://github.com/SoftwareAG/webmethods-integrationserver-aws-samples.git`
 5. Copy msrInstallerLinuxScript_10_5.txt from cloned repository (webmethods-integrationserver-aws-samples/msr/CloudFormation) into s3 bucket created from step 2
