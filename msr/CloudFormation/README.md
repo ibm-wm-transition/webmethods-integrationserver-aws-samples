@@ -1,4 +1,4 @@
-# Microservice Runtime Quickstart in AWS cloud using CloudFormation Template
+# Microservices Runtime Quickstart in AWS cloud using CloudFormation Template
 
 This project allows user to launch Softaware AG webMethods Microservices Runtime in AWS cloud using AWS CloudFormation template
 
