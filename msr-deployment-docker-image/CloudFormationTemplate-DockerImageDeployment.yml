@@ -11,6 +11,10 @@ Parameters:
     Type: String
     Description: >
       Specifies the Docker image url from where the docker image will be downloaded
+  ECSAMI:
+    Description: AMI ID
+    Type: String
+    Description: Name of the ECS optimized instance id.
 Resources:
   # First, a VPC:
   VPC:
@@ -215,7 +219,7 @@ Resources:
   EcsInstanceLc:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
-      ImageId: ami-00f69adbdc780866c
+      ImageId: !Ref ECSAMI
       InstanceType: t2.small
       AssociatePublicIpAddress: true
       IamInstanceProfile: !GetAtt ECSInstanceProfile.Arn
