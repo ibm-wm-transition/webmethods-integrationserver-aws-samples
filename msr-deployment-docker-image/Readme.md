@@ -22,7 +22,8 @@ This project allows user to launch Softaware AG webMethods Microservices Runtime
     * MSR Configuration
         | Parameter            	| Description                                                                                   	| Default                   	| Required 	|
         |----------------------	|-----------------------------------------------------------------------------------------------	|---------------------------	|----------	|
-        | DockerImageUrl              	| Specifies the Docker image url from where the docker image will be downloaded	|  	| Yes      	|
+        | DockerImageUrl        | Specifies the Docker image url from where the docker image will be downloaded	|  	| Yes      	|
+		| ECSAMI              	| Name of the ECS optimized instance id obtained from https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html 	|  	| Yes      	|
         | EcsClusterName 	| Specifies the ECS Cluster Name with which the resources would be associated | default                      	| Yes      	|
 
  8. In Step 3 (Configure stack options), ignore all the fields and click Next button
