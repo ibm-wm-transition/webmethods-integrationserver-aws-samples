@@ -861,11 +861,11 @@
                         {
                            "Ref":"DefaultPort"
                         },
-                        "#g; s#^IntegrationServerdiagnosticPort=__VERSION1__.*#IntegrationServerdiagnosticPort=__VERSION1__,9999#g; s#^Username=.*#Username=\\",
+                        "#g; s#^IntegrationServerdiagnosticPort=__VERSION1__.*#IntegrationServerdiagnosticPort=__VERSION1__,9999#g; s#^Username=.*#Username=",
                         {
                            "Ref":"EmpowerUserName"
                         },
-                        "#g; s#^Password=.*#Password=\\",
+                        "#g; s#^Password=.*#Password=",
                         {
                            "Ref":"EmpowerPassword"
                         },
