@@ -15,6 +15,9 @@ Parameters:
     Description: AMI ID
     Type: String
     Description: Name of the ECS optimized instance id.
+  DockerCredentialSecret:
+    Type: String
+    Description: ARN of the Secret created in Secret manager. This credential will be used by docker to pull images from private repository
 Resources:
   # First, a VPC:
   VPC:
@@ -229,7 +232,7 @@ Resources:
           !Sub |
             #!/bin/bash
             echo ECS_CLUSTER=${MyCluster101} >> /etc/ecs/ecs.config;
-            echo ECS_BACKEND_HOST= >> /etc/ecs/ecs.config;
+            echo ECS_BACKEND_HOST= >> /etc/ecs/ecs.config;         
       BlockDeviceMappings: 
         - DeviceName: /dev/xvdcz
           Ebs: 
@@ -279,6 +282,19 @@ Resources:
                 - 'logs:CreateLogStream'
                 - 'logs:PutLogEvents'
               Resource: '*'
+      ManagedPolicyArns:
+        - !Ref DockerHubPolicy
+  DockerHubPolicy:
+    Type: 'AWS::IAM::ManagedPolicy'
+    Properties:
+      ManagedPolicyName: DockerHubAccessPolicy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - secretsmanager:GetSecretValue
+            Resource: '*'              
   Taskdefinition:
     Type: AWS::ECS::TaskDefinition
     Properties:
@@ -295,6 +311,8 @@ Resources:
               HostPort: 5555
           Memory: 1024
           MemoryReservation: 600
+          RepositoryCredentials:
+            CredentialsParameter: !Ref DockerCredentialSecret
   ECSServiceRole:
     Type: AWS::IAM::Role
     Properties:
